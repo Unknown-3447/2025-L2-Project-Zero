@@ -3,15 +3,23 @@ MAX_TICKETS = 5
 tickets_sold = 0
 
 while tickets_sold < MAX_TICKETS:
-    name = input("Name: ")
+    name = input("Enter name (or 'xxx' to quit): ").strip()
 
-    # if name is exit code, break out of loop
-    if name == "xxx":
+    # Check for exit code
+    if name.lower() == "xxx":
         break
 
-    tickets_sold += 1
+    # Check for blank name
+    if name == "":
+        print("Name can't be blank. Please try again.")
+        continue
 
+    tickets_sold += 1
+    print(f"Ticket sold to {name}. ({tickets_sold} / {MAX_TICKETS} tickets sold)\n")
+
+# Output final message
+print()
 if tickets_sold == MAX_TICKETS:
-    print(f"You have sold all the tickets (ie: {MAX_TICKETS} tickets.)")
+    print(f"All tickets sold! ({MAX_TICKETS} tickets total)")
 else:
-    print(f"You have sold {tickets_sold} / {MAX_TICKETS} tickets.")
+    print(f"You sold {tickets_sold} / {MAX_TICKETS} tickets.")

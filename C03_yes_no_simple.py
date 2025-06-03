@@ -1,13 +1,13 @@
 # Functions go here
 def yes_no(question):
-    """Checks that users enter yes / y or n / n to a question"""
+    """Checks that users enter yes / y or no / n to a question"""
 
     while True:
-        response = input(question).lower()
+        response = input(question).strip().lower()
 
-        if response == "yes" or response == "y":
+        if response in ("yes", "y"):
             return "yes"
-        elif response == "no" or response == "n":
+        elif response in ("no", "n"):
             return "no"
         else:
             print("Please enter yes (y) or no (n).\n")
@@ -17,5 +17,5 @@ def yes_no(question):
 
 # Loop for testing purposes
 while True:
-    want_instructions = yes_no("Do you want to read the instructions? ")
-    print(f"You chose {want_instructions}\n")
+    want_instructions = yes_no("Do you want to read the instructions? (yes/no): ")
+    print(f"You chose: {want_instructions}\n")

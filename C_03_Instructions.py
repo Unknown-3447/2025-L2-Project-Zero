@@ -11,7 +11,6 @@ def string_check(question, valid_answers=('yes', 'no'), num_letters=1):
         response = input(question).lower()
 
         for item in valid_answers:
-            # Checks if the response is the entire word or a valid shortcut
             if response == item or response == item[:num_letters]:
                 return item
 
@@ -35,17 +34,19 @@ It will also choose one lucky ticket holder who wins the draw (their ticket is f
 ''')
 
 
-# Main routine goes here
+# Main routine starts here
 make_statement("Mini-Movie Fundraiser Program", "🍿")
 
 print()
-want_instructions = string_check("Do you want to see the instructions? ")
+want_instructions = string_check("Do you want to see the instructions? ", ('yes', 'no'), 1)
 
 if want_instructions == "yes":
     instructions()
+else:
+    print("Instructions skipped.")
 
 print()
-payment_ans = ['cash', 'credit']
+payment_ans = ('cash', 'credit')  # Changed to tuple for consistency
 pay_method = string_check("Payment method: ", payment_ans, 2)
 print(f"You chose {pay_method}")
 

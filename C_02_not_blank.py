@@ -1,10 +1,10 @@
 def not_blank(question):
-    """Checks that a user response is not blank"""
+    """Prompts the user until they enter a non-blank response."""
 
     while True:
-        response = input(question)
+        response = input(question).strip()
 
-        if response != "":
+        if response:
             return response
 
         print("Sorry, this can't be blank. Please try again.\n")
@@ -12,4 +12,4 @@ def not_blank(question):
 
 # Main routine starts here
 who = not_blank("Please enter your name: ")
-print(f"Hello {who}")
+print(f"Hello, {who}!")

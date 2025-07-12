@@ -1,4 +1,5 @@
 import pandas
+import random  # <-- Added this import for random.choice()
 
 # Functions go here
 def make_statement(statement, decoration):
@@ -156,6 +157,20 @@ print("\n--- Ticket Sales Summary ---")
 print(mini_movie_frame.to_string(index=False))
 print(f"\nTotal Paid:   ${total_paid:.2f}")
 print(f"Total Profit: ${total_profit:.2f}")
+
+# choose random winner...
+winner = random.choice(all_names)
+
+# find index of winner (ie: position in list)
+winner_index = all_names.index(winner)
+
+# retrieve total won (unformatted from original data)
+total_won_amount = (
+    all_ticket_costs[winner_index] + all_surcharges[winner_index]
+)
+
+# winner announcement
+print(f"\n🎉 The lucky winner is {winner}! Their ticket worth ${total_won_amount:.2f} is free!")
 
 print()
 if tickets_sold == MAX_TICKETS:

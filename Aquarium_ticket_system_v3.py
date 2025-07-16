@@ -134,7 +134,7 @@ if yes_no("Do you want to see the instructions? ") == "yes":
     print('''
 Welcome to the Aquarium Ticket System 🐠 Here's how it works:
 
-1. Enter the event name (e.g., "Summer Fish Fest") and how many tickets are available.
+1. Enter a event name for the Aquarium (e.g., "Summer Fish Fest") and how many tickets are available.
 2. Add costs for things that depend on ticket numbers, like fish food or staff wages. You'll need at least one cost.
 3. Add fixed costs, like tank cleaning, if you have any. (you can skip these)
 4. Set a profit goal, either as a dollar amount (e.g., $500) or a percentage of costs (e.g., 50%).

@@ -147,7 +147,7 @@ Welcome to the Aquarium Ticket Fundraiser program! 🐠 Here's how it works:
 8. The program picks a random raffle winner who gets their ticket free!
 9. You'll see a summary of all costs, ticket sales, and profits, saved to a file with the event name and date.
 
-Type 'xxx' to stop entering costs or tickets at any time. Let's make this aquarium event a splash! 🐠
+Type 'xxx' to stop entering costs or tickets at any time.
 ''')
 else:
     print("Instructions skipped.")
